@@ -17,6 +17,9 @@ pipeline {
                  transfers: [
                    execCommand: 'echo Hello World'
                    ]
+                 )
+               ]
+             )
          }
        }
      }

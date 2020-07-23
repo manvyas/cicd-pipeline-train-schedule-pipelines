@@ -5,11 +5,11 @@ pipeline {
         steps {
           withCredentials([usernamePassword(crdentialsId:'deploy_server',usernameVariable:'USERNAME',passwordVariable:'PASSWORD')])
            sshPublisher(
-             failOnError: true
-             continueOnError: false
+             failOnError: true,
+             continueOnError: false,
              publishers: [
                sshPublisherDesc(
-                 configName: 'staging'
+                 configName: 'staging',
                  sshCredentials: [
                                     username: "$USERNAME",
                                     encryptedPassphrase: "$USERPASS"

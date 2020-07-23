@@ -17,8 +17,7 @@ pipeline {
          
                    transfers: [
                                     sshTransfer(
-                                        sourceFiles: 'C:/Program Files (x86)/Jenkins/workspace/train_schedule',
-                                        removePrefix: 'C:/Program Files (x86)/Jenkins/workspace',
+                                        sourceFiles: 'test',
                                         remoteDirectory: '/tmp',
                  )
                ]

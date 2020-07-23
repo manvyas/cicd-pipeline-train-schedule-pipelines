@@ -3,7 +3,20 @@ pipeline {
     stages {
       stage('build') {
         steps {
-          sh 'mvn --version'
+          withCredentials([usernamePassword(crdentialsId:'deploy_server',usernameVariable:'USERNAME',passwordVariable:'PASSWORD')])
+           sshPublisher(
+             failOnError: true
+             continueOnError: false
+             publishers: [
+               sshPublisherDesc(
+                 configName: 'staging'
+                 sshCredentials: [
+                                    username: "$USERNAME",
+                                    encryptedPassphrase: "$USERPASS"
+                                ],
+                 transfers: [
+                   execCommand: 'echo Hello World'
+                   ]
          }
        }
      }

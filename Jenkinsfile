@@ -14,9 +14,8 @@ pipeline {
                                     username: "$USERNAME",
                                     encryptedPassphrase: "$USERPASS"
                                 ],
-                 transfers: [
+         
                    execCommand: 'echo Hello World'
-                   ]
                  )
                ]
              )
